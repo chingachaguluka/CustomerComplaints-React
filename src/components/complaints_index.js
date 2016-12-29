@@ -26,7 +26,7 @@ class ComplaintsIndex extends Component {
         return this.props.complaints.map((complaint) => {  
             return (
                 <li className="list-group-item" key={complaint.id}>
-                    <Link to={`posts/${complaint.id}`} >
+                    <Link to={`complaints/${complaint.id}`} >
                         <Paper style={style} zDepth={1} >
                             <h3>{complaint.name}</h3><span className="text-xs-right">Case#: <strong>{complaint.id}</strong> </span>
                             Status: <strong>{complaint.status} </strong>Logged: <strong>{complaint.dateLogged} </strong>

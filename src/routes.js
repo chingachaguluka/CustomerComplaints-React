@@ -3,10 +3,12 @@ import { Route, IndexRoute } from 'react-router';
 import App from './components/app';
 import ComplaintsIndex from './components/complaints_index';
 import ComplaintsNew from './components/complaints_new';
+import ComplaintsShow from './components/complaints_show';
 
 export default (
 	<Route path="/" component={ App }>
         <IndexRoute component={ ComplaintsIndex } />
         <Route path="complaints/new" component={ ComplaintsNew } />
+        <Route path="complaints/:id" component={ ComplaintsShow } />
     </Route>
 );
