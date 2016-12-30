@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
@@ -7,6 +6,8 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import DatePicker from 'material-ui/DatePicker';
 import { Link } from 'react-router';
+import { reduxForm } from 'redux-form';
+import { createComplaint } from '../actions/index';
 
 const style = {
   padding: 3,
@@ -42,7 +43,7 @@ class ComplaintsNew extends Component {
             controlledDate: null,
             value: null
         };
-        injectTapEventPlugin();
+
     }
 
     handleStatusChange = (event, index, value) => this.setState({value});
@@ -57,62 +58,59 @@ class ComplaintsNew extends Component {
 
     render() {
 
+        const { fields: {name, phone, email, branch, dateLogged, status, description, resolverComments, verifierComments}, handleSubmit } = this.props;
+
         return (
             <div>
                 <h4 className="text-xs-center">Enter complaint</h4>
-                <form >
+                <form onSubmit={handleSubmit(this.props.createComplaint)}>
                     <Paper style={style} zDepth={1}>
                         <TextField
                             hintText="Enter customer's name"
-                            floatingLabelText="Customer's Name"/><br/>
+                            fullWidth="true"
+                            floatingLabelText="Customer's Name" {...name} /><br/>
                         <TextField
                             hintText="Enter phone number(s)"
-                            floatingLabelText="Phone(s)"/><br/>
+                            fullWidth="true"
+                            floatingLabelText="Phone(s)" {...phone} /><br/>
                         <TextField
                             hintText="Enter email address"
-                            floatingLabelText="Email address"/><br/>
-                        <SelectField
-                            value={this.state.value}
-                            onChange={this.handleBranchChange}
-                            floatingLabelText="Branch"
-                            >
-                            {branches}
-                        </SelectField><br/>
-                        <DatePicker
-                            floatingLabelText="Logging Date"
-                            hintText="Select date"
-                            value={this.state.controlledDate}
-                            onChange={this.handleDateChange}
-                        /><br/>
-                        <SelectField
-                            floatingLabelText="Status"
-                            value={this.state.value}
-                            onChange={this.handleStatusChange}
-                            >
-                            <MenuItem value={1} primaryText="Unattended" />
-                            <MenuItem value={2} primaryText="Customer Contacted" />
-                            <MenuItem value={3} primaryText="Resolved" />
-                            <MenuItem value={4} primaryText="Closed" />
-                        </SelectField><br/>
+                            fullWidth="true"
+                            floatingLabelText="Email address" {...email} /><br/>
+                        <TextField
+                            hintText="Enter branch"
+                            fullWidth="true"
+                            floatingLabelText="Branch" {...branch} /><br/>
+                        <TextField
+                            hintText="Enter date dd-mmm-yy"
+                            fullWidth="true"
+                            floatingLabelText="Logging Date" {...dateLogged} /><br/>
+                        <TextField
+                            hintText="Unattended | Customer Contacted | Resolved | Closed"
+                            fullWidth="true"
+                            floatingLabelText="Status" {...status} /><br/>
                         <TextField
                             floatingLabelText="Description"
+                            fullWidth="true"
                             hintText="Enter the complaint details..."
                             multiLine={true}
                             rows={4}
-                            rowsMax={6}/><br />
+                            rowsMax={6} {...description} /><br />
                         <TextField
                             floatingLabelText="Contacting Customer"
+                            fullWidth="true"
                             hintText="Enter the feedback after contacting the customer..."
                             multiLine={true}
                             rows={4}
-                            rowsMax={6}/><br />
+                            rowsMax={6} {...resolverComments} /><br />
                         <TextField
                             floatingLabelText="Comments by Verifier"
+                            fullWidth="true"
                             hintText="Enter the comments after verifying with customer..."
                             multiLine={true}
                             rows={4}
-                            rowsMax={6}/><br />
-                        <RaisedButton label="Save" primary={true} style={buttonStyle} />
+                            rowsMax={6} {...verifierComments} /><br />
+                        <RaisedButton label="Save" primary={true} style={buttonStyle} type="submit" />
                         <Link to="/">
                             <RaisedButton label="Cancel" secondary={true} style={buttonStyle} />
                         </Link>
@@ -123,4 +121,11 @@ class ComplaintsNew extends Component {
     }
 }
 
-export default ComplaintsNew;
+
+export default reduxForm({
+    form: 'ComplaintsNewForm',
+    fields: ['name', 'phone', 'email', 'branch', 'dateLogging', 'status', 'description', 
+    'resolverComments', 'verifierComments']
+}, 
+null, { createComplaint })(ComplaintsNew);
+

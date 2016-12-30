@@ -6,9 +6,8 @@ import { connect } from 'react-redux';
 import { fetchComplaints } from '../actions/index';
 
 const style = {
-  height: 66,
-  margin: 10,
-  padding: 3,
+  height: 55,
+  margin: 5,
   textAlign: 'center'
 };
 
