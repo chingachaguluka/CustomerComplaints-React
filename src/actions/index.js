@@ -7,7 +7,7 @@ export const FETCH_COMPLAINT = 'FETCH_COMPLAINT';
 const ROOT_URL = 'http://localhost:2403/';
 
 export function fetchComplaints() {
-    const url = `${ROOT_URL}cases`;
+    const url = `${ROOT_URL}complaints`;
     let request = axios.get(url);
 
     return {
@@ -17,7 +17,7 @@ export function fetchComplaints() {
 }
 
 export function fetchComplaint(id) {
-    const url = `${ROOT_URL}cases/${id}`;
+    const url = `${ROOT_URL}complaints/${id}`;
     let request = axios.get(url);
 
     return {
