@@ -7,6 +7,7 @@ import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui
 import RaisedButton from 'material-ui/RaisedButton';
 
 
+
 import ComplaintsIndex from './complaints_index';
 
 
@@ -14,8 +15,10 @@ const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
 const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
 
 export default class App extends Component {
+  
 
   render() {
+    
     return (
       <div>
           <MuiThemeProvider>

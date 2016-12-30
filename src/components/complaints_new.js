@@ -42,6 +42,7 @@ class ComplaintsNew extends Component {
             controlledDate: null,
             value: null
         };
+        injectTapEventPlugin();
     }
 
     handleStatusChange = (event, index, value) => this.setState({value});
