@@ -6,7 +6,7 @@ import { Router, browserHistory } from 'react-router';
 import routes from './routes';
 import promise from 'redux-promise';
 import reducers from './reducers';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 

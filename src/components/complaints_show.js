@@ -25,7 +25,7 @@ class ComplaintsShow extends Component {
         return (
             <div className="panel panel-default">
                 <div className="panel-heading">
-                    <h3 class="panel-title">{complaint.name}<span class="text-right"> Complaint#: {complaint.id}</span></h3>
+                    <h3 className="panel-title">{complaint.name}<span className="text-right"> Complaint#: {complaint.id}</span></h3>
                 </div>
                 <div className="panel-body">
                     <div className="row">
@@ -92,9 +92,11 @@ class ComplaintsShow extends Component {
                             <strong>{complaint.verifierComments}</strong> 
                         </div>
                     </div><br/>
-                    <div class="row">
-                        <div class="col-xs-9 offset-md-4">
-                            <RaisedButton label="Update" primary={true} style={buttonStyle} />
+                    <div className="row">
+                        <div className="col-xs-9 offset-md-4">
+                            <Link to={`complaints/update`} >
+                                <RaisedButton label="Update" primary={true} style={buttonStyle} />
+                            </Link>
                             <Link to="/">
                                 <RaisedButton label="Cancel" secondary={true} style={buttonStyle} />
                             </Link>

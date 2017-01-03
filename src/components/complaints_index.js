@@ -46,6 +46,9 @@ class ComplaintsIndex extends Component {
                 <Link to="complaints/new">
                     <RaisedButton label="Enter Complaint" style={buttonStyle} primary={true} />
                 </Link>
+                <Link to="complaints/update">
+                    <RaisedButton label="Update Complaint" style={buttonStyle} primary={true} />
+                </Link>
                 <ul className="list-group">
                     {this.renderComplaints()}
                 </ul>
