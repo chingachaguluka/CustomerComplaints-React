@@ -39,7 +39,6 @@ export function createComplaint(props) {
     }
 }
 
-/*
 export function updateComplaint(props, id) {
     const url = `${ROOT_URL}complaints/${id}`;
     let request = axios.put(url, props);
@@ -51,4 +50,3 @@ export function updateComplaint(props, id) {
     }
 }
 
-*/
