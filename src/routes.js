@@ -10,7 +10,7 @@ export default (
 	<Route path="/" component={ App }>
         <IndexRoute component={ ComplaintsIndex } />
         <Route path="complaints/new" component={ ComplaintsNew } />
-        <Route path="complaints/update" component={ ComplaintsUpdate } />
+        <Route path="complaints/update/:id" component={ ComplaintsUpdate } />
         <Route path="complaints/:id" component={ ComplaintsShow } />
         
     </Route>

@@ -1,3 +1,7 @@
 html {
     font-family: 'Roboto', sans-serif;
 }
+
+form button {
+    margin: 5px;
+}

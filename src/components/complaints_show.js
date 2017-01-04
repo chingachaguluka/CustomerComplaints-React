@@ -94,7 +94,7 @@ class ComplaintsShow extends Component {
                     </div><br/>
                     <div className="row">
                         <div className="col-xs-9 offset-md-4">
-                            <Link to={`complaints/update`} >
+                            <Link to={`/complaints/update/${complaint.id}`} >
                                 <RaisedButton label="Update" primary={true} style={buttonStyle} />
                             </Link>
                             <Link to="/">
