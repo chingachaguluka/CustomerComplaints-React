@@ -25,76 +25,78 @@ class ComplaintsShow extends Component {
         return (
             <div className="panel panel-default">
                 <div className="panel-heading">
-                    <h3 class="panel-title">{complaint.name}<span class="text-right"> Complaint#: {complaint.id}</span></h3>
+                    <h3 className="panel-title">{complaint.name}<span className="text-right"> Complaint#: {complaint.id}</span></h3>
                 </div>
                 <div className="panel-body">
                     <div className="row">
-                        <div className="col-md-4 text-right">
+                        <div className="col-xs-3 text-right">
                             Phone(s):
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-xs-9">
                             <strong>{complaint.phone}</strong> 
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-4 text-right">
+                        <div className="col-xs-3 text-right">
                             Email:
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-xs-9">
                             <strong>{complaint.email}</strong> 
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-4 text-right">
+                        <div className="col-xs-3 text-right">
                             Branch:
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-xs-9">
                             <strong>{complaint.branch}</strong> 
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-4 text-right">
+                        <div className="col-xs-3 text-right">
                             Logged:
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-xs-9">
                             <strong>{complaint.dateLogged}</strong> 
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-4 text-right">
+                        <div className="col-xs-3 text-right">
                             Status:
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-xs-9">
                             <strong>{complaint.status}</strong> 
                         </div>
                     </div><br/>
                     <div className="row">
-                        <div className="col-md-4 text-right">
+                        <div className="col-xs-3 text-right">
                             Description:
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-xs-9">
                             <strong>{complaint.description}</strong> 
                         </div>
                     </div><br/>
                     <div className="row">
-                        <div className="col-md-4 text-right">
+                        <div className="col-xs-3 text-right">
                             Resolver's Comments:
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-xs-9">
                             <strong>{complaint.resolverComments}</strong> 
                         </div>
                     </div><br/>
                     <div className="row">
-                        <div className="col-md-4 text-right">
+                        <div className="col-xs-3 text-right">
                             Verifier's Comments:
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-xs-9">
                             <strong>{complaint.verifierComments}</strong> 
                         </div>
                     </div><br/>
-                    <div class="row">
-                        <div class="col-md-8 offset-md-4">
-                            <RaisedButton label="Update" primary={true} style={buttonStyle} />
+                    <div className="row">
+                        <div className="col-xs-9 offset-md-4">
+                            <Link to={`complaints/update`} >
+                                <RaisedButton label="Update" primary={true} style={buttonStyle} />
+                            </Link>
                             <Link to="/">
                                 <RaisedButton label="Cancel" secondary={true} style={buttonStyle} />
                             </Link>

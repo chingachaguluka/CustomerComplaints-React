@@ -6,9 +6,8 @@ import { connect } from 'react-redux';
 import { fetchComplaints } from '../actions/index';
 
 const style = {
-  height: 66,
-  margin: 10,
-  padding: 3,
+  height: 55,
+  margin: 5,
   textAlign: 'center'
 };
 
@@ -46,6 +45,9 @@ class ComplaintsIndex extends Component {
             <div>
                 <Link to="complaints/new">
                     <RaisedButton label="Enter Complaint" style={buttonStyle} primary={true} />
+                </Link>
+                <Link to="complaints/update">
+                    <RaisedButton label="Update Complaint" style={buttonStyle} primary={true} />
                 </Link>
                 <ul className="list-group">
                     {this.renderComplaints()}
