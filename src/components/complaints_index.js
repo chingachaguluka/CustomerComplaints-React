@@ -45,7 +45,7 @@ class ComplaintsIndex extends Component {
         //console.log(this.props.complaints);
         return (
             <div>
-                <Link to="complaints/new">
+                <Link to="/complaints/new">
                     <button className="btn btn-primary">Log Complaint</button>
                 </Link>
 
