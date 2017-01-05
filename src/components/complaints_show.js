@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import RaisedButton from 'material-ui/RaisedButton';
 import { fetchComplaint } from '../actions/index';
 
 const buttonStyle = {
@@ -20,7 +19,6 @@ class ComplaintsShow extends Component {
         if(!complaint) {
             return <div>Loading...</div>
         }
-
 
         return (
             <div className="panel panel-default">
@@ -95,14 +93,13 @@ class ComplaintsShow extends Component {
                     <div className="row">
                         <div className="col-xs-9 offset-md-4">
                             <Link to={`/complaints/update/${complaint.id}`} >
-                                <RaisedButton label="Update" primary={true} style={buttonStyle} />
+                                <button type="button" className="btn btn-primary">Update</button>
                             </Link>
                             <Link to="/">
-                                <RaisedButton label="Cancel" secondary={true} style={buttonStyle} />
+                                <button type="button" className="btn btn-default">Return</button>
                             </Link>
                         </div>
                     </div>
-
                 </div>
             </div>
 

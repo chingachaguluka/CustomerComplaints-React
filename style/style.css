@@ -5,3 +5,11 @@ html {
 form button {
     margin: 5px;
 }
+
+button {
+    margin: 5px;
+}
+
+#body {
+    padding: 70px;
+}
