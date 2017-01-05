@@ -7,7 +7,10 @@ import { createComplaint } from '../actions/index';
 
 
 class ComplaintsNew extends Component {
-        
+
+    hundleSubmit(formValues) {
+        this.props.createComplaint;
+    }   
 
     render() {
 
@@ -17,7 +20,7 @@ class ComplaintsNew extends Component {
         return (
             <div>
                 <h3 className="text-center">Enter complaint</h3>
-                <form className="form-horizontal" onSubmit={handleSubmit(this.props.createComplaint)}>
+                <form className="form-horizontal" onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label className="col-sm-2 control-label">Customer's Name</label>
                         <div className="col-sm-10">
